@@ -26,6 +26,6 @@ public class Main_Frame extends JFrame{
 		validate();
 	}
 	
-	
+	// TODO: make a Game_Frame class containing of the necessary functions that every game will have
 	
 }
