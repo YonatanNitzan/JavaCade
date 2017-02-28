@@ -45,7 +45,6 @@ public class Main_Panel extends JPanel{
 				
 				switch(choice){
 				case "Pacman":
-					frame.setVisible(false);
 					new Pacman_Frame(frame);
 				}
 			}
