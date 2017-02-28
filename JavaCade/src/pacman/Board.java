@@ -12,18 +12,16 @@ import javax.swing.Timer;
 @SuppressWarnings("serial")
 public class Board extends JPanel implements ActionListener {
 
-	private Pacman_Frame game;
 	private Player p;
 	private Timer gameTimer;
 	
-	public Board(Pacman_Frame game) {
-		this.game = game;
-		//setBackground(Color.BLACK);
+	public Board() {
+		setBackground(Color.BLACK);
 		
 		gameTimer = new Timer(5, this);
 		gameTimer.start();
 		
-		p = new Player(game, 100, 100);
+		p = new Player(100, 100);
 	}
 
 	@Override

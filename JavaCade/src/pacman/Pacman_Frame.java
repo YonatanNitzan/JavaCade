@@ -32,8 +32,8 @@ public class Pacman_Frame extends JFrame {
 		    }
 		});
 		
-		Spanel = new Score(this);
-		Bpanel = new Board(this);
+		Spanel = new Score();
+		Bpanel = new Board();
 		Spanel.setPreferredSize(new Dimension(menu.getWidth(), 100));
 		Bpanel.setPreferredSize(new Dimension(menu.getWidth(), 500));
 		

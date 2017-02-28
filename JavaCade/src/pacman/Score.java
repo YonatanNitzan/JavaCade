@@ -3,18 +3,14 @@ package pacman;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class Score extends JPanel {
-
-	private Pacman_Frame game;
 	
-	public Score(Pacman_Frame game)
+	public Score()
 	{
-		this.game = game;
 		setBackground(Color.WHITE);
 	}
 	
