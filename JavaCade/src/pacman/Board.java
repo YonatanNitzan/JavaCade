@@ -18,7 +18,7 @@ public class Board extends JPanel implements ActionListener {
 	public Board() {
 		setBackground(Color.BLACK);
 		
-		gameTimer = new Timer(5, this);
+		gameTimer = new Timer(10, this);
 		gameTimer.start();
 		
 		p = new Player(100, 100);
