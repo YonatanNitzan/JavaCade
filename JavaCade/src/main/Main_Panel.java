@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import pacman.Pacman_Frame;
+import pong.Pong;
 
 @SuppressWarnings("serial")
 public class Main_Panel extends JPanel{
@@ -30,7 +31,7 @@ public class Main_Panel extends JPanel{
 		JLabel l = new JLabel("Choose a game", JLabel.CENTER);
 		l.setFont(new Font("Vijaya", Font.PLAIN, 40));
 		
-		String[] game_list = {"Pacman", "what", "what", "what"};
+		String[] game_list = {"Pacman", "Pong", "What", "Twat"};
 		JComboBox<String> game_combo = new JComboBox<String>(game_list);
 		game_combo.setSelectedIndex(-1);
 		
@@ -46,6 +47,8 @@ public class Main_Panel extends JPanel{
 				switch(choice){
 				case "Pacman":
 					new Pacman_Frame(frame);
+				case "Pong":
+					new Pong(frame);
 				}
 			}
 		});

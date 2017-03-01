@@ -19,6 +19,7 @@ public class Pacman_Frame extends JFrame {
 	public Pacman_Frame(Main_Frame menu)
 	{
 		menu.setVisibility();
+		
 		setTitle("Pacman");
 		setResizable(false);
 		setSize(WIDTH, HEIGHT);

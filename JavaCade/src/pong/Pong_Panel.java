@@ -28,11 +28,11 @@ public class Pong_Panel extends JPanel implements ActionListener, KeyListener {
 	private Timer timer, timer2;
     
 	public Pong_Panel(Pong game) {
-		setBackground(Color.WHITE);
+		setBackground(Color.BLACK);
 		this.game = game;
 		ball = new Pong_Ball(game);
-		p1 = new Pong_Player(game, KeyEvent.VK_UP, KeyEvent.VK_DOWN, 1, Color.BLUE, 50);
-		p2 = new Pong_Player(game, KeyEvent.VK_W, KeyEvent.VK_S, 2, Color.RED, 50);
+		p1 = new Pong_Player(game, KeyEvent.VK_UP, KeyEvent.VK_DOWN, 1, Color.WHITE, 50);
+		p2 = new Pong_Player(game, KeyEvent.VK_W, KeyEvent.VK_S, 2, Color.WHITE, 50);
 		string3 = "starting";
 		string4 = "Pause";
 		timer2 = new Timer(1000, new ActionListener(){
@@ -72,7 +72,7 @@ public class Pong_Panel extends JPanel implements ActionListener, KeyListener {
         p1.paint(g);
         p2.paint(g);
         
-        g.setColor(Color.BLACK);
+        g.setColor(Color.GRAY);
         
         if(timer.isRunning() && !timer2.isRunning())
         {

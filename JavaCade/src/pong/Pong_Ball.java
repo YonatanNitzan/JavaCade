@@ -17,7 +17,7 @@ public class Pong_Ball {
 	}
 
 	public void paint(Graphics g) {
-		g.setColor(Color.GREEN);
+		g.setColor(Color.LIGHT_GRAY);
 		g.fillArc(x, y, WIDTH, HEIGHT, 0, 360);
 	}
 	

@@ -1,22 +1,34 @@
 package pong;
 
 import java.awt.Dimension;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
+
+import main.Main_Frame;
 
 @SuppressWarnings("serial")
 public class Pong extends JFrame {
 	
-	private final static int WIDTH = 300, HEIGHT = 300;
+	private final static int WIDTH = 1100, HEIGHT = 700;
     private Pong_Panel panel;
 	
-	public Pong() {
+	public Pong(Main_Frame menu) {
+		menu.setVisibility();
+		
 		setTitle("Two player Pong!");
-		setResizable(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
 		setMinimumSize(new Dimension(WIDTH, HEIGHT));
-		setSize(WIDTH, HEIGHT);
 		setVisible(true);
+		
+		addWindowListener(new WindowAdapter()
+		{
+		    public void windowClosing(WindowEvent e)
+		    {
+		        menu.setVisibility();
+		    }
+		});
 		
 		panel = new Pong_Panel(this);
 		add(panel);
@@ -28,10 +40,5 @@ public class Pong extends JFrame {
 	public Pong_Panel getPanel()
 	{
 		return panel;
-	}
-	
-	public static void main(String[] args)
-	{
-		new Pong();
 	}
 }
