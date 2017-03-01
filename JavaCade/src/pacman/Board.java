@@ -2,24 +2,28 @@ package pacman;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 @SuppressWarnings("serial")
-public class Board extends JPanel implements ActionListener {
+public class Board extends JPanel implements KeyListener, ActionListener {
 
 	private Player p;
 	private Timer gameTimer;
 	
-	public Board() {
+	public Board(Pacman_Frame frame) {
 		setBackground(Color.BLACK);
 		
 		gameTimer = new Timer(10, this);
 		gameTimer.start();
+		
+		addKeyListener(this);
+		frame.addKeyListener(this);
 		
 		p = new Player(100, 100);
 	}
@@ -29,9 +33,7 @@ public class Board extends JPanel implements ActionListener {
 	{
 		super.paintComponent(g);
 		
-		Graphics2D g2 = (Graphics2D) g;
-		
-		p.paint(g2);
+		p.paint(g);
 	}
 
 	@Override
@@ -42,5 +44,20 @@ public class Board extends JPanel implements ActionListener {
 
 	private void update() {
 		p.update();
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		p.pressed(e.getKeyCode());
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		p.released(e.getKeyCode());
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		//unused
 	}
 }
