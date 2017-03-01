@@ -5,8 +5,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -53,15 +51,7 @@ public class Pong_Panel extends JPanel implements ActionListener, KeyListener {
         game.addKeyListener(this);
         setFocusable(true);
         
-        addComponentListener(new ComponentAdapter() 
-        {  
-                public void componentResized(ComponentEvent evt) {
-                    p1.resized();
-                    p2.resized();
-                    ball.resized();
-                    repaint();
-                }
-        });
+        reset();
 	}
 	
 	@Override
@@ -186,8 +176,8 @@ public class Pong_Panel extends JPanel implements ActionListener, KeyListener {
     }
 
     private void reset() {
-		p1.resized();
-		p2.resized();
+		p1.reset();
+		p2.reset();
 		ball.reset();
 	}
 

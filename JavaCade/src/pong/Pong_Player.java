@@ -41,7 +41,7 @@ public class Pong_Player {
 			yd = 0;
 	}
 	
-	public void resized()
+	public void reset()
 	{
 		if(playerNum == 1)
 			x = game.getWidth() - (d + WIDTH);

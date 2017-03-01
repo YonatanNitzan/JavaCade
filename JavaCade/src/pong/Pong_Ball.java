@@ -20,12 +20,6 @@ public class Pong_Ball {
 		g.setColor(Color.LIGHT_GRAY);
 		g.fillArc(x, y, WIDTH, HEIGHT, 0, 360);
 	}
-	
-	public void resized()
-	{
-		x = game.getWidth() / 2 - WIDTH / 2;
-		y = game.getHeight() / 2 - HEIGHT / 2;
-	}
 
 	public void update() {
 		x += xd;
