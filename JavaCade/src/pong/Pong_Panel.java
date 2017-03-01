@@ -15,8 +15,8 @@ import javax.swing.Timer;
 @SuppressWarnings("serial")
 public class Pong_Panel extends JPanel implements ActionListener, KeyListener {
 
-	private Pong game;
-    private Pong_Ball ball;
+	private Pong_Frame game;
+    private Ball ball;
     private Pong_Player p1, p2;
     private int score1, score2, starterCount = 5;
     private int stringx, stringy;
@@ -25,10 +25,10 @@ public class Pong_Panel extends JPanel implements ActionListener, KeyListener {
 	private Font stringFont, stringFont2;
 	private Timer timer, timer2;
     
-	public Pong_Panel(Pong game) {
+	public Pong_Panel(Pong_Frame game) {
 		setBackground(Color.BLACK);
 		this.game = game;
-		ball = new Pong_Ball(game);
+		ball = new Ball(game);
 		p1 = new Pong_Player(game, KeyEvent.VK_UP, KeyEvent.VK_DOWN, 1, Color.WHITE, 50);
 		p2 = new Pong_Player(game, KeyEvent.VK_W, KeyEvent.VK_S, 2, Color.WHITE, 50);
 		string3 = "starting";

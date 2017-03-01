@@ -13,7 +13,7 @@ import javax.swing.Timer;
 @SuppressWarnings("serial")
 public class Board extends JPanel implements KeyListener, ActionListener {
 
-	private Player p;
+	private Pacman_Player p;
 	private Timer gameTimer;
 	
 	public Board(Pacman_Frame frame) {
@@ -25,7 +25,7 @@ public class Board extends JPanel implements KeyListener, ActionListener {
 		addKeyListener(this);
 		frame.addKeyListener(this);
 		
-		p = new Player(100, 100);
+		p = new Pacman_Player(100, 100);
 	}
 
 	@Override

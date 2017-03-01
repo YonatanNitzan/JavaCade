@@ -4,13 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Pong_Ball {
+public class Ball {
 
 	private static final int WIDTH = 15, HEIGHT = WIDTH;
-	private Pong game;
+	private Pong_Frame game;
 	private int x, xd = 2, y, yd = 2;
 	
-	public Pong_Ball(Pong game) {
+	public Ball(Pong_Frame game) {
 		this.game = game;
 		x = game.getWidth() / 2 - WIDTH;
 		y = game.getHeight() / 2 - HEIGHT;

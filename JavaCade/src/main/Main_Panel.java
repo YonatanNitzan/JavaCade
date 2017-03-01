@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import pacman.Pacman_Frame;
-import pong.Pong;
+import pong.Pong_Frame;
 
 @SuppressWarnings("serial")
 public class Main_Panel extends JPanel{
@@ -49,7 +49,7 @@ public class Main_Panel extends JPanel{
 					new Pacman_Frame(frame);
 					break;
 				case "Pong":
-					new Pong(frame);
+					new Pong_Frame(frame);
 					break;
 				}
 			}
