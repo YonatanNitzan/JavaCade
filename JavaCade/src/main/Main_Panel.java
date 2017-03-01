@@ -47,8 +47,10 @@ public class Main_Panel extends JPanel{
 				switch(choice){
 				case "Pacman":
 					new Pacman_Frame(frame);
+					break;
 				case "Pong":
 					new Pong(frame);
+					break;
 				}
 			}
 		});

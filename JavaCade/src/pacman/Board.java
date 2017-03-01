@@ -39,11 +39,6 @@ public class Board extends JPanel implements KeyListener, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		repaint();
-		update();
-	}
-
-	private void update() {
-		p.update();
 	}
 
 	@Override

@@ -13,7 +13,7 @@ import javax.swing.Timer;
 public class Player implements ActionListener {
 
 	private final int SIZE = 30, OPEN = 300, CLOSED = 360, MID_WAY = 330;
-	private int x, xd, y, yd;
+	private int x, y;
 	private Arc2D.Double circle;
 	private int angle = 30, Cangle, fullAngle = OPEN;
 	private Timer moveTimer;
@@ -34,10 +34,6 @@ public class Player implements ActionListener {
 		g2.setColor(Color.YELLOW);
 		circle = new Arc2D.Double(x, y, SIZE, SIZE, Cangle, fullAngle, Arc2D.PIE);
 		g2.fill(circle);
-	}
-
-	public void update() {
-		
 	}
 	
 	public void pressed(int key) {
