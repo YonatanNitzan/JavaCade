@@ -6,7 +6,7 @@ import java.awt.Rectangle;
 
 public class Pong_Player {
 
-	private static final int WIDTH = 15, HEIGHT = 65;
+	private static final int WIDTH = 15, HEIGHT = 64;
 	private int playerNum, up, down, x, y, yd, d;
 	private Color c;
 	private Pong game;
@@ -59,4 +59,9 @@ public class Pong_Player {
 	public Rectangle getBounds() {
         return new Rectangle(x, y, WIDTH, HEIGHT);
     }
+	
+	public int getCenterY()
+	{
+		return y + (HEIGHT / 2);
+	}
 }

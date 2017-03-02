@@ -17,7 +17,7 @@ public class Pong_Panel extends JPanel implements ActionListener, KeyListener {
 
 	private Pong game;
     private Pong_Ball ball;
-    private Pong_Player p1, p2;
+    Pong_Player p1, p2;
     private int score1, score2, starterCount = 5;
     private int stringx, stringy;
 	private String string, string2, string3, string4;
