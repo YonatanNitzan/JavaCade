@@ -10,12 +10,12 @@ import java.awt.geom.Rectangle2D.Double;
 public class Pong_Ball {
 
 	private static final int WIDTH = 15, HEIGHT = WIDTH;
-	private Pong game;
+	private Pong_Frame game;
 	private double x, xd = 2, y, yd = 2;
 	private double relativeHitPoint;
 	private Arc2D.Double ball;
 	
-	public Pong_Ball(Pong game) {
+	public Pong_Ball(Pong_Frame game) {
 		this.game = game;
 		x = game.getWidth() / 2 - WIDTH / 2;
 		y = game.getHeight() / 2 - HEIGHT / 2;

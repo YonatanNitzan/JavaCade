@@ -2,43 +2,45 @@ package pong;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.Graphics2D;
+import java.awt.geom.Arc2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.geom.Rectangle2D.Double;
 
 public class Ball {
 
 	private static final int WIDTH = 15, HEIGHT = WIDTH;
 	private Pong_Frame game;
-	private int x, xd = 2, y, yd = 2;
+	private double x, xd = 2, y, yd = 2;
+	private double relativeHitPoint;
+	private Arc2D.Double ball;
 	
 	public Ball(Pong_Frame game) {
 		this.game = game;
-		x = game.getWidth() / 2 - WIDTH;
-		y = game.getHeight() / 2 - HEIGHT;
+		x = game.getWidth() / 2 - WIDTH / 2;
+		y = game.getHeight() / 2 - HEIGHT / 2;
 	}
 
 	public void paint(Graphics g) {
-		g.setColor(Color.LIGHT_GRAY);
-		g.fillArc(x, y, WIDTH, HEIGHT, 0, 360);
+		Graphics2D g2 = (Graphics2D) g;
+		
+		g2.setColor(Color.LIGHT_GRAY);
+		ball = new Arc2D.Double(x, y, WIDTH, HEIGHT, 0, 360, Arc2D.OPEN);
+		g2.fill(ball);
 	}
 
 	public void update() {
 		x += xd;
 		y += yd;
 		
-		if(game.getPanel().getPlayer(1).getBounds().intersects(getBounds()) || game.getPanel().getPlayer(2).getBounds().intersects(getBounds()))
+		if(game.getPanel().getPlayer(1).getBounds().intersects(getBounds()))
 		{
-			xd = -xd;
-			if(yd == 0)
-			{
-				yd = 1;
-				float i = (float) Math.random();
-				int j = Math.round(i);
-				while(j != 0)
-				{
-					yd = -yd;
-					j--;
-				}
-			}
+			colide(1);
+		}
+		
+		else if(game.getPanel().getPlayer(2).getBounds().intersects(getBounds()))
+		{
+			colide(2);
 		}
 		
 		else if(x < 0)
@@ -65,8 +67,42 @@ public class Ball {
 			game.getPanel().endgame(2);
 	}
 	
-	public Rectangle getBounds() {
-        return new Rectangle(x, y, WIDTH, HEIGHT);
+	private void colide(int p) {
+		xd = -xd;
+		
+		if (p == 1)
+			relativeHitPoint = Math.abs((y + HEIGHT / 2) - (game.getPanel().p1.getCenterY()));
+		else
+			relativeHitPoint = Math.abs((y + HEIGHT / 2) - (game.getPanel().p2.getCenterY()));
+		
+		if(yd == 0)
+		{
+			yd = 1;
+			if(relativeHitPoint == 0)
+			{
+				float i = (float) Math.random();
+				int j = Math.round(i);
+				while(j != 0)
+				{
+					yd = -yd;
+					j--;
+				}
+			}
+		}
+		else if (yd > 0)
+		{
+			yd = 1;
+			yd += relativeHitPoint * 0.05;
+		}
+		else
+		{
+			yd = -1;
+			yd += relativeHitPoint * -0.05;
+		}
+	}
+
+	public Double getBounds() {
+        return new Rectangle2D.Double(x, y, WIDTH, HEIGHT);
     }
 	
 	public void reset()
