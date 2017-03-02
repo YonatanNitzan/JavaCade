@@ -9,9 +9,9 @@ public class Pong_Player {
 	private static final int WIDTH = 15, HEIGHT = 64;
 	private int playerNum, up, down, x, y, yd, d;
 	private Color c;
-	private Pong game;
+	private Pong_Frame game;
 
-	public Pong_Player(Pong game, int up, int down, int playerNum, Color c, int d) {
+	public Pong_Player(Pong_Frame game, int up, int down, int playerNum, Color c, int d) {
 		this.game = game;
 		this.up = up;
 		this.down = down;

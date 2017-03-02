@@ -13,7 +13,7 @@ import main.Main_Frame;
 public class Pacman_Frame extends JFrame {
 	
 	private final static int WIDTH = 600, HEIGHT = 600;
-    private Score Spanel;
+    private Score_Panel Spanel;
     private Board Bpanel;
 	
 	public Pacman_Frame(Main_Frame menu)
@@ -33,7 +33,7 @@ public class Pacman_Frame extends JFrame {
 		    }
 		});
 		
-		Spanel = new Score();
+		Spanel = new Score_Panel();
 		Bpanel = new Board(this);
 		Spanel.setPreferredSize(new Dimension(menu.getWidth(), 100));
 		Bpanel.setPreferredSize(new Dimension(menu.getWidth(), 500));

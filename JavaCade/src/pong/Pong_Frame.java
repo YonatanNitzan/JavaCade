@@ -9,12 +9,12 @@ import javax.swing.JFrame;
 import main.Main_Frame;
 
 @SuppressWarnings("serial")
-public class Pong extends JFrame {
+public class Pong_Frame extends JFrame {
 	
 	private final static int WIDTH = 1100, HEIGHT = 700;
     private Pong_Panel panel;
 	
-	public Pong(Main_Frame menu) {
+	public Pong_Frame(Main_Frame menu) {
 		menu.setVisibility();
 		
 		setTitle("Two player Pong!");

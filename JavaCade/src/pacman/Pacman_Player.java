@@ -10,7 +10,7 @@ import java.awt.geom.Arc2D;
 
 import javax.swing.Timer;
 
-public class Player implements ActionListener {
+public class Pacman_Player implements ActionListener {
 
 	private final int SIZE = 30, OPEN = 300, CLOSED = 360, MID_WAY = 330;
 	private int x, y;
@@ -20,7 +20,7 @@ public class Player implements ActionListener {
 	private int animationFrame;
 	private char direction;
 	
-	public Player(int x, int y) {
+	public Pacman_Player(int x, int y) {
 		this.x = x;
 		this.y = y;
 		

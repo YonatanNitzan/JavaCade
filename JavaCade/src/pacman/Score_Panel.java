@@ -7,9 +7,9 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class Score extends JPanel {
+public class Score_Panel extends JPanel {
 	
-	public Score()
+	public Score_Panel()
 	{
 		setBackground(Color.WHITE);
 	}
