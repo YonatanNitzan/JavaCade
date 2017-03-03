@@ -92,9 +92,15 @@ public class Pacman_Player implements ActionListener {
 			fullAngle = MID_WAY;
 			animationFrame++;
 		}
-		else
+		else if(animationFrame == 2)
 		{
 			fullAngle = CLOSED;
+			animationFrame++;
+		}
+		else if(animationFrame == 3)
+		{
+			Cangle = angle - 15;
+			fullAngle = MID_WAY;
 			animationFrame = 0;
 		}
 	}
