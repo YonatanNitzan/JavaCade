@@ -18,21 +18,23 @@ import pong.Pong_Frame;
 public class Main_Panel extends JPanel{
 	
 	public Main_Panel(Main_Frame frame) {
-		setBackground(Color.WHITE);
-		setLayout(new GridLayout(2,1));
+		setBackground(Color.WHITE);  		 				//Sets the background to white
+		setLayout(new GridLayout(2,1));						//Adds a grid layout
 		
-		JPanel head_panel = new JPanel();
-		JPanel middle_panel = new JPanel();
+		JPanel head_panel = new JPanel();					//Creates a new panel
+		JPanel middle_panel = new JPanel();					//Creates a new panel
 		
-		JLabel l = new JLabel("Choose a game", JLabel.CENTER);
-		l.setFont(new Font("Vijaya", Font.PLAIN, 40));
+		JLabel l = new JLabel("Choose a game", JLabel.CENTER);	//Creates a centered label
+		l.setFont(new Font("Vijaya", Font.PLAIN, 40));			//Sets the label's font
 		
-		String[] game_list = {"Pacman", "Pong", "What", "Twat"};
-		JComboBox<String> game_combo = new JComboBox<String>(game_list);
-		game_combo.setSelectedIndex(-1);
+		String[] game_list = {"Pacman", "Pong", "What", "Twat"};//Creates an array of games
+		JComboBox<String> game_combo = new JComboBox<String>(game_list);//Creates a combo box and adds the game array
+		game_combo.setSelectedIndex(-1);					//Sets the selected item to nothing
 		
-		JButton play_button = new JButton("Play");
-		play_button.setFont(new Font("Vijaya", Font.PLAIN, 25));
+		JButton play_button = new JButton("Play");			//Creates a new button
+		play_button.setFont(new Font("Vijaya", Font.PLAIN, 25));//Sets the button's font
+		
+		/*Adding an action to the button*/
 		play_button.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -51,6 +53,7 @@ public class Main_Panel extends JPanel{
 			}
 		});
 		
+		/*Adding all the created components*/
 		head_panel.add(l);
 		middle_panel.add(game_combo);
 		middle_panel.add(play_button);
