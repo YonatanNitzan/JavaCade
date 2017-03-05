@@ -19,6 +19,7 @@ public class Score_Panel extends JPanel {
 	{
 		super.paintComponent(g);
 		
+		/* test */
 		String s = "High Score";
 		Font f = new Font("Kristen ITC", Font.ITALIC, 30);
 		g.setFont(f);

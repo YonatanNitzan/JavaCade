@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 @SuppressWarnings("serial")
 public class Main_Frame extends JFrame {
 
-	/* Variable setup */
+	/* Variable declaration */
 	private final static int WIDTH = 600, HEIGHT = 600;	//Dimensions constants
     private Main_Panel panel;							//Panel variable
 	
@@ -17,7 +17,7 @@ public class Main_Frame extends JFrame {
 	public Main_Frame()
 	{
 		/* Frame setup */
-		setTitle("JavaCade Main Menu");					//Title setting
+		setTitle("JavaCade Main Menu");					//Sets the frame's title
 		setResizable(false);							//Makes the frame unresizable
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//Makes the program terminate when the frame closes
 		setSize(WIDTH, HEIGHT);							//Sets the size of the frame
@@ -30,7 +30,7 @@ public class Main_Frame extends JFrame {
 		validate();
 	}
 	
-	/* A function that toggles the visibility of the frame */
+	/* Toggles the visibility of the frame */
 	public void setVisibility()
 	{
 		setVisible(!isVisible());

@@ -13,19 +13,20 @@ import javax.swing.Timer;
 @SuppressWarnings("serial")
 public class Board extends JPanel implements KeyListener, ActionListener {
 
-	private Pacman_Player p;
-	private Timer gameTimer;
+	/* Variable declaration */
+	private Pacman_Player p;				//Player variable
+	private Timer gameTimer;				//Timer that runs the game
 	
 	public Board(Pacman_Frame frame) {
-		setBackground(Color.BLACK);
+		setBackground(Color.BLACK);			//Sets background
 		
-		gameTimer = new Timer(10, this);
-		gameTimer.start();
+		gameTimer = new Timer(10, this);	//Sets the timer with a delay of 10 milliseconds
+		gameTimer.start(); 					//Starts the timer
 		
-		addKeyListener(this);
-		frame.addKeyListener(this);
+		addKeyListener(this); 				//Adds key listener to the this panel
+		frame.addKeyListener(this);			//Adds key listener to the game's frame
 		
-		p = new Pacman_Player(100, 100);
+		p = new Pacman_Player(100, 100); 	//Sets the start position of the player
 	}
 
 	@Override
@@ -33,22 +34,25 @@ public class Board extends JPanel implements KeyListener, ActionListener {
 	{
 		super.paintComponent(g);
 		
+		/* Calls the paint function in all objects */
 		p.paint(g);
 	}
 
+	/* When the timer runs */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		repaint();
 	}
 
+	/* When a key is pressed */
 	@Override
 	public void keyPressed(KeyEvent e) {
-		p.pressed(e.getKeyCode());
+		p.pressed(e.getKeyCode());			//Sends the code of the pressed key to the player object			
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		p.released(e.getKeyCode());
+		//unused
 	}
 
 	@Override

@@ -12,22 +12,24 @@ import javax.swing.Timer;
 
 public class Pacman_Player implements ActionListener {
 
-	private final int SIZE = 30, OPEN = 300, CLOSED = 360, MID_WAY = 330;
-	private int x, y;
-	private Arc2D.Double circle;
-	private int angle = 30, Cangle, fullAngle = OPEN;
-	private Timer moveTimer;
-	private int animationFrame;
-	private char direction;
+	/* Variable declaration */
+	private final int SIZE = 30, OPEN = 300, CLOSED = 360, MID_WAY = 330; //Setting finals of the size and possible angles of the player
+	private int x, y;									//Place-holder variables for x and y
+	private Arc2D.Double circle;						//A 2D double arc
+	private int angle = 30, Cangle, fullAngle = OPEN;	//Place-holder variables for the players appearance
+	private Timer animationTimer;						//Timer for the mouth's animation
+	private int animationFrame = 1;						//Counter for the frames in the animation
+	private char direction;								//Char indicating the direction the player is facing
 	
 	public Pacman_Player(int x, int y) {
-		this.x = x;
-		this.y = y;
+		this.x = x;										//Applies the starting x position
+		this.y = y;										//Applies the starting y position
 		
-		moveTimer = new Timer(100, this);
-		moveTimer.start();
+		animationTimer = new Timer(100, this);			//Sets the timer to  delay of a 10th of a second
+		animationTimer.start();							//Starts the timer
 	}
 
+	/* Paints the player */
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		
@@ -36,7 +38,10 @@ public class Pacman_Player implements ActionListener {
 		g2.fill(circle);
 	}
 	
+	/* When a key is pressed */
 	public void pressed(int key) {
+		
+		/* Sets the direction of the player according to the pressed key */
 		switch (key)
 		{
 		case KeyEvent.VK_UP:
@@ -54,12 +59,11 @@ public class Pacman_Player implements ActionListener {
 		}
 	}
 
-	public void released(int key) {
-		
-	}
-
+	/* When the animation timer counts */
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		/* Sets the angle and x, y values */
 		switch (direction)
 		{
 		case 'u':
@@ -80,28 +84,29 @@ public class Pacman_Player implements ActionListener {
 			break;
 		}
 		
-		if(animationFrame == 0)
+		/* The animation */
+		if(animationFrame == 1)			//First frame
 		{
 			Cangle = angle;
 			fullAngle = OPEN;
 			animationFrame++;
 		}
-		else if(animationFrame == 1)
+		else if(animationFrame == 2)	//Second frame
 		{
 			Cangle = angle - 15;
 			fullAngle = MID_WAY;
 			animationFrame++;
 		}
-		else if(animationFrame == 2)
+		else if(animationFrame == 3)	//Third frame
 		{
 			fullAngle = CLOSED;
 			animationFrame++;
 		}
-		else if(animationFrame == 3)
+		else if(animationFrame == 4)	//Fourth frame
 		{
 			Cangle = angle - 15;
 			fullAngle = MID_WAY;
-			animationFrame = 0;
+			animationFrame = 1;			//Goes back to the first frame
 		}
 	}
 }
