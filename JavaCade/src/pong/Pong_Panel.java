@@ -15,15 +15,16 @@ import javax.swing.Timer;
 @SuppressWarnings("serial")
 public class Pong_Panel extends JPanel implements ActionListener, KeyListener {
 
-	private Pong_Frame game;
-    private Ball ball;
-    Pong_Player p1, p2;
-    private int score1, score2, starterCount = 5;
-    private int stringx, stringy;
-	private String string, string2, string3, string4;
-	private boolean gameRunning = false;
-	private Font stringFont, stringFont2;
-	private Timer timer, timer2;
+	/* Variable declaration */
+	private Pong_Frame game;						//
+    private Ball ball;								//
+    Pong_Player p1, p2;								//
+    private int score1, score2, starterCount = 5;	//
+    private int stringx, stringy;					//
+	private String string, string2, string3, string4;//
+	private boolean gameRunning = false;			//
+	private Font stringFont, stringFont2;			//
+	private Timer timer, timer2;					//
     
 	public Pong_Panel(Pong_Frame game) {
 		setBackground(Color.BLACK);
